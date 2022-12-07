@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Rajdhani:wght@300;400;500;600;700&family=Staatliches&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "eras-demi";
+  src: url(../public/fonts/eras-demi-itc/ErasDemiITC.ttf);
+}
+
+:root {
+  --navbar-height: 50px;
+}
+
+@layer base {
+  * {
+    @apply text-white font-questrial;
+  }
+
+  body {
+    @apply bg-brand-1000 text-white overflow-x-hidden;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  .header {
+    @apply bg-[];
+  }
+
+  .rounds-table {
+    table-layout: fixed;
+  }
+
+  .rounds-table th,
+  .rounds-table td {
+    @apply font-staatliches text-white text-center py-3 px-4;
+  }
+
+  .rounds-table th {
+    @apply text-lg xl:text-2xl uppercase font-normal;
+  }
+
+  .rounds-table td[data-side] {
+    @apply bg-[#494949] uppercase;
+  }
+
+  .rounds-table td {
+    @apply text-sm xl:text-xl bg-[#6D6D6D];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1440px] mx-auto w-[90%] lg:w-[80%];
+  }
+  .container-2 {
+    @apply max-w-[1440px] mx-auto w-[90%] lg:w-[70%];
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      #ffffff 3.28%,
+      rgba(255, 255, 255, 0.81) 89.11%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+.black-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 110 !important;
+  transition: all 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.black-screen.show {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --navbar-height: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --navbar-height: 60px;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --navbar-height: 96px;
+  }
+}
